@@ -98,5 +98,6 @@ Take a look at the following how-to guides to deploy models:
 
 * [Configure Text Generation Models](../how-to/configure-text-generation-models.md)
 * [Configure Embedding Models](../how-to/configure-embedding-models.md)
+* [Configure Reranking Models](../how-to/configure-reranking-models.md)
 * [Configure Speech to Text Models](../how-to/configure-speech-to-text.md)
 

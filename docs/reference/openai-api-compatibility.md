@@ -32,6 +32,14 @@ POST /v1/embeddings
 
 * Supported for  Models with `.spec.features: ["TextEmbedding"]`.
 
+### Reranking
+
+```
+POST /v1/rerank
+```
+
+* Supported for  Models with `.spec.features: ["Reranking"]`.
+
 ### Speech-to-Text
 
 ```

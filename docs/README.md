@@ -1,14 +1,15 @@
 # KubeAI: AI Inferencing Operator
 
-Deploy and scale machine learning models on Kubernetes. Built for LLMs, embeddings, and speech-to-text.
+Deploy and scale machine learning models on Kubernetes. Built for LLMs, embeddings, reranking, and speech-to-text.
 
 ## Highlights
 
 What is it for?
 
-🚀 **LLM Inferencing** - Operate vLLM and Ollama servers  
-🎙️ **Speech Processing** - Transcribe audio with FasterWhisper  
-🔢 **Vector Embeddings** - Generate embeddings with Infinity  
+🚀 **LLM Inferencing** - Operate vLLM and Ollama servers
+🎙️ **Speech Processing** - Transcribe audio with FasterWhisper
+🔢 **Vector Embeddings** - Generate embeddings with Infinity
+📚 **Reranking** - Reorder search results with cross-encoder models
 
 What do you get?
 
@@ -54,6 +55,7 @@ No need to change your client libraries, KubeAI supports the following endpoints
 /v1/chat/completions
 /v1/completions
 /v1/embeddings
+/v1/rerank
 /v1/models
 /v1/audio/transcriptions
 ```
