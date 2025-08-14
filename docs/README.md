@@ -1,6 +1,10 @@
 # KubeAI: AI Inferencing Operator
 
-Deploy and scale machine learning models on Kubernetes. Built for LLMs, embeddings, reranking, and speech-to-text.
+> **🚨 Looking for New Maintainers** 
+> 
+> We are looking for new maintainers to take over this project! If you're interested in becoming a maintainer and helping drive the future of KubeAI, please reach out on our [Discord channel](https://discord.gg/JeXhcmjZVm).
+
+Deploy and scale machine learning models on Kubernetes. Built for LLMs, embeddings, and speech-to-text.
 
 ## Highlights
 
