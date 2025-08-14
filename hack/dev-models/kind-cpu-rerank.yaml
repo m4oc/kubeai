@@ -1,0 +1,34 @@
+---
+apiVersion: kubeai.org/v1
+kind: Model
+metadata:
+  name: dev-rerank
+  annotations:
+    # Have the controller send requests to localhost to allow for
+    # running the controller locally (assuming a port-forward is in place).
+    model-pod-ip: "127.0.0.1"
+    model-pod-port: "7000" 
+spec:
+  features: ["Reranking"]
+  url: hf://BAAI/bge-reranker-base
+  engine: Infinity
+  resourceProfile: cpu:1
+  minReplicas: 1
+  maxReplicas: 3
+
+---
+# Service for port-fowarding to the model:
+#
+# while true; do kubectl port-forward service/dev-rerank 7000:7000; done
+#
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-rerank
+spec:
+  selector:
+    model: dev-rerank
+  ports:
+    - protocol: TCP
+      port: 7000
+      targetPort: 8000

@@ -148,6 +148,7 @@ spec:
                   enum:
                   - TextGeneration
                   - TextEmbedding
+                  - Reranking
                   - SpeechToText
                   type: string
                 type: array

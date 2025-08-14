@@ -172,6 +172,8 @@ func (r *Request) readJSONBody(body io.Reader, path string) error {
 		r.modelRequest = &openaiv1.ChatCompletionRequest{}
 	case "/v1/embeddings":
 		r.modelRequest = &openaiv1.EmbeddingRequest{}
+	case "/v1/rerank":
+		r.modelRequest = &openaiv1.RerankRequest{}
 	default:
 		return fmt.Errorf("unknown path: %q", path)
 	}

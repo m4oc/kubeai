@@ -1,0 +1,10 @@
+apiVersion: kubeai.org/v1
+kind: Model
+metadata:
+  name: bge-rerank-base-cpu
+spec:
+  features: [Reranking]
+  url: hf://BAAI/bge-reranker-base
+  engine: Infinity
+  minReplicas: 1
+  resourceProfile: cpu:1

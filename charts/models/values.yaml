@@ -589,6 +589,12 @@ catalog:
     url: "hf://BAAI/bge-small-en-v1.5"
     engine: Infinity
     resourceProfile: cpu:1
+  bge-rerank-base-cpu:
+    enabled: false
+    features: ["Reranking"]
+    url: "hf://BAAI/bge-reranker-base"
+    engine: Infinity
+    resourceProfile: cpu:1
   # Opt #
   opt-125m-cpu:
     enabled: false
