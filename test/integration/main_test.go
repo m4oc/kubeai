@@ -69,6 +69,7 @@ const (
 	testVLLMDefualtImage     = "default-vllm-image:v1.2.3"
 	testVLLMCPUImage         = "cpu-vllm-image:v1.2.3"
 	cpuRuntimeClassName      = "my-cpu-runtime-class"
+	cpuSchedulerName         = "my-cpu-scheduler"
 )
 
 // TestMain performs setup and teardown for integration tests - i.e. all Test*()
@@ -80,7 +81,7 @@ func TestMain(m *testing.M) {
 
 	// Setup Kubernetes environment.
 	testEnv = &envtest.Environment{
-		CRDDirectoryPaths:     []string{"../../charts/kubeai/templates/crds"},
+		CRDDirectoryPaths:     []string{"../../manifests/crds"},
 		ErrorIfCRDPathMissing: true,
 	}
 	var err error
@@ -212,6 +213,7 @@ func baseSysCfg(t *testing.T) config.System {
 						Effect:   corev1.TaintEffectNoSchedule,
 					},
 				},
+				SchedulerName:    cpuSchedulerName,
 				RuntimeClassName: ptr.To(cpuRuntimeClassName),
 				Affinity: &corev1.Affinity{
 					NodeAffinity: &corev1.NodeAffinity{
