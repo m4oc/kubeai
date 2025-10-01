@@ -44,7 +44,7 @@ modelServers:
       # "default" is used when no imageName is specified or if a specific image is not found.
       default: "vllm/vllm-openai:v0.10.2"
       nvidia-gpu: "vllm/vllm-openai:v0.10.2"
-      cpu: "vllm/vllm-openai:v0.10.2"
+      cpu: "public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:v0.10.2"
       google-tpu: "vllm/vllm-tpu:23194d83e8f2a6783b0d8c275f5f8a22faab9aec"
       # VLLM support arm
       gh200: "vllm/vllm-openai:v0.10.2"
