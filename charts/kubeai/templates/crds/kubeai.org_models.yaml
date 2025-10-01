@@ -149,6 +149,7 @@ spec:
                   - TextGeneration
                   - TextEmbedding
                   - SpeechToText
+                  - Reranking
                   type: string
                 type: array
               files:

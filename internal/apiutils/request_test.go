@@ -59,6 +59,13 @@ func TestParseRequest(t *testing.T) {
 			expModel:  "test-model",
 			expPrefix: "test-prefi", // "test-prefix" (max 10) --> "test-prefi"
 		},
+		{
+			name:      "rerank request",
+			body:      `{"model": "test-model", "query": "test-prefix"}`,
+			path:      "/v1/vllm/rerank",
+			expModel:  "test-model",
+			expPrefix: "test-prefi", // "test-prefix" (max 10) --> "test-prefi"
+		},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {

@@ -142,7 +142,7 @@ type ModelSpec struct {
 	PriorityClassName string `json:"priorityClassName,omitempty"`
 }
 
-// +kubebuilder:validation:Enum=TextGeneration;TextEmbedding;SpeechToText
+// +kubebuilder:validation:Enum=TextGeneration;TextEmbedding;SpeechToText;Reranking
 type ModelFeature string
 
 const (
@@ -150,6 +150,7 @@ const (
 	ModelFeatureTextEmbedding  = "TextEmbedding"
 	// TODO (samos123): Add validation that Speech to Text only supports Faster Whisper.
 	ModelFeatureSpeechToText = "SpeechToText"
+	ModelFeatureReranking    = "Reranking"
 )
 
 const (

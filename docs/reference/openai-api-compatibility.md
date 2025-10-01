@@ -32,6 +32,15 @@ POST /v1/embeddings
 
 * Supported for  Models with `.spec.features: ["TextEmbedding"]`.
 
+### Reranking
+
+```
+POST /v1/vllm/rerank
+```
+
+* Supported for Models with `.spec.features: ["Reranking"]`.
+* When using the official OpenAI clients, configure the reranking client with a base URL that includes `/v1/vllm` (for example `http://kubeai/openai/v1/vllm`) so that requests are sent to `/v1/vllm/rerank`.
+
 ### Speech-to-Text
 
 ```
