@@ -35,7 +35,7 @@ POST /v1/embeddings
 ### Reranking
 
 ```
-POST /v1/rerank
+POST /v1/vllm/rerank
 ```
 
 * Supported for  Models with `.spec.features: ["Reranking"]`.
