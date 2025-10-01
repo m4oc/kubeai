@@ -62,7 +62,7 @@ func TestParseRequest(t *testing.T) {
 		{
 			name:     "rerank request",
 			body:     `{"model": "test-model", "query": "q", "documents": ["d1", "d2"]}`,
-			path:     "/v1/vllm/rerank",
+			path:     "/v1/rerank",
 			expModel: "test-model",
 		},
 	}
