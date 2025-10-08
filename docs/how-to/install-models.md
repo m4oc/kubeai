@@ -4,11 +4,11 @@ This guide provides instructions on how to configure KubeAI models.
 
 ## Installing models with helm
 
-KubeAI provides a [chart](https://github.com/substratusai/kubeai/blob/main/charts/models) that contains preconfigured models.
+KubeAI provides a [chart](https://github.com/kubeai-project/kubeai/blob/main/charts/models) that contains preconfigured models.
 
 ### Preconfigured models with helm
 
-When you are defining Helm values for the `kubeai/models` chart you can install a preconfigured Model by setting `enabled: true`. You can view a list of all preconfigured models in the chart's [default values file](https://github.com/substratusai/kubeai/blob/main/charts/models/values.yaml). 
+When you are defining Helm values for the `kubeai/models` chart you can install a preconfigured Model by setting `enabled: true`. You can view a list of all preconfigured models in the chart's [default values file](https://github.com/kubeai-project/kubeai/blob/main/charts/models/values.yaml). 
 
 ```yaml
 # helm-values.yaml
@@ -56,7 +56,7 @@ kubectl explain models.spec
 kubectl explain models.spec.engine
 ```
 
-You can view all example manifests on the [GitHub repository](https://github.com/substratusai/kubeai/tree/main/manifests/models).
+You can view all example manifests on the [GitHub repository](https://github.com/kubeai-project/kubeai/tree/main/manifests/models).
 
 Below are few examples using various engines and resource profiles.
 
@@ -96,7 +96,7 @@ spec:
 
 ## Programmatically installing models
 
-See the [examples](https://github.com/substratusai/kubeai/tree/main/examples/k8s-api-clients).
+See the [examples](https://github.com/kubeai-project/kubeai/tree/main/examples/k8s-api-clients).
 
 ## Calling a model
 
@@ -164,4 +164,4 @@ When the cluster is under resource pressure, Kubernetes will evict lower-priorit
 
 ## Feedback welcome: A model management UI
 
-We are considering adding a UI for managing models in a running KubeAI instance. Give the [GitHub Issue](https://github.com/substratusai/kubeai/issues/148) a thumbs up if you would be interested in this feature.
+We are considering adding a UI for managing models in a running KubeAI instance. Give the [GitHub Issue](https://github.com/kubeai-project/kubeai/issues/148) a thumbs up if you would be interested in this feature.

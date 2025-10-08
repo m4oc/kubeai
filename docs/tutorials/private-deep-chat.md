@@ -47,7 +47,7 @@ helm install kubeai kubeai/kubeai --set open-webui.enabled=false --wait --timeou
 Clone the KubeAI repo and navigate to the example directory.
 
 ```bash
-git clone https://github.com/substratusai/kubeai
+git clone https://github.com/kubeai-project/kubeai
 cd ./kubeai/examples/private-deep-chat
 ```
 

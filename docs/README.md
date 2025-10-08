@@ -73,7 +73,7 @@ KubeAI consists of two primary sub-components:
 
 **2. The model operator:** the KubeAI model operator manages backend server Pods directly. It automates common operations such as downloading models, mounting volumes, and loading dynamic LoRA adapters via the KubeAI Model CRD.
 
-Both of these components are co-located in the same deployment, but [could be deployed independently](https://github.com/substratusai/kubeai/issues/430).
+Both of these components are co-located in the same deployment, but [could be deployed independently](https://github.com/kubeai-project/kubeai/issues/430).
 
 <img src="./diagrams/arch.excalidraw.png"></img>
 

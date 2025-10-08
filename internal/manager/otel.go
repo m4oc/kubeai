@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/substratusai/kubeai/internal/metrics"
+	"github.com/kubeai-project/kubeai/internal/metrics"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/prometheus"
 	"go.opentelemetry.io/otel/propagation"

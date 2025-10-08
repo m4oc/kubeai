@@ -3,7 +3,7 @@ package manager
 import (
 	"os"
 
-	"github.com/substratusai/kubeai/internal/config"
+	"github.com/kubeai-project/kubeai/internal/config"
 	"sigs.k8s.io/yaml"
 )
 

@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/require"
-	"github.com/substratusai/kubeai/internal/config"
-	"github.com/substratusai/kubeai/internal/manager"
+	"github.com/kubeai-project/kubeai/internal/config"
+	"github.com/kubeai-project/kubeai/internal/manager"
 	"gocloud.dev/pubsub"
 	_ "gocloud.dev/pubsub/mempubsub"
 	corev1 "k8s.io/api/core/v1"

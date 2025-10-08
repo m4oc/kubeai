@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
 )
 
 func TestParseRequest(t *testing.T) {

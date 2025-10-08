@@ -8,9 +8,9 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/apiutils"
-	"github.com/substratusai/kubeai/internal/metrics"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/apiutils"
+	"github.com/kubeai-project/kubeai/internal/metrics"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 )

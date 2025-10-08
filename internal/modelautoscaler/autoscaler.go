@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/substratusai/kubeai/internal/config"
-	"github.com/substratusai/kubeai/internal/leader"
-	"github.com/substratusai/kubeai/internal/loadbalancer"
-	"github.com/substratusai/kubeai/internal/modelclient"
-	"github.com/substratusai/kubeai/internal/movingaverage"
+	"github.com/kubeai-project/kubeai/internal/config"
+	"github.com/kubeai-project/kubeai/internal/leader"
+	"github.com/kubeai-project/kubeai/internal/loadbalancer"
+	"github.com/kubeai-project/kubeai/internal/modelclient"
+	"github.com/kubeai-project/kubeai/internal/movingaverage"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

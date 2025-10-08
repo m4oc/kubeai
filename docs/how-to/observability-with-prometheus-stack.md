@@ -39,7 +39,7 @@ metrics:
       labels: {}
 ```
 
-If you want to manually create the PodMonitor please take a look at the KubeAI helm chart [vLLM PodMonitor template](https://github.com/substratusai/kubeai/blob/main/charts/kubeai/templates/vllm-pod-monitor.yaml).
+If you want to manually create the PodMonitor please take a look at the KubeAI helm chart [vLLM PodMonitor template](https://github.com/kubeai-project/kubeai/blob/main/charts/kubeai/templates/vllm-pod-monitor.yaml).
 
 
 
@@ -64,4 +64,4 @@ You can get the credential if that doesn't work:
 kubectl get secret prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
-You can import the example vLLM dashboard in the KubeAI repo at [examples/observability/vllm-grafana-dashboard.json](https://github.com/substratusai/kubeai/blob/main/examples/observability/vllm-grafana-dashboard.json).
+You can import the example vLLM dashboard in the KubeAI repo at [examples/observability/vllm-grafana-dashboard.json](https://github.com/kubeai-project/kubeai/blob/main/examples/observability/vllm-grafana-dashboard.json).

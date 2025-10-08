@@ -127,7 +127,7 @@ helm upgrade --install kubeai kubeai/kubeai \
 
 ### Resource Profiles
 
-For AKS GPU deployments using the upstream Kubernetes device plugin, you can customize resource requests and limits via KubeAI’s [values-nvidia-k8s-device-plugin.yaml](https://github.com/substratusai/kubeai/blob/main/charts/kubeai/values-nvidia-k8s-device-plugin.yaml).
+For AKS GPU deployments using the upstream Kubernetes device plugin, you can customize resource requests and limits via KubeAI’s [values-nvidia-k8s-device-plugin.yaml](https://github.com/kubeai-project/kubeai/blob/main/charts/kubeai/values-nvidia-k8s-device-plugin.yaml).
 
 We recommend referencing [the installation guide](../any/#installation-using-nvidia-gpus) for examples of how to specify these resource profiles within your Helm values. This file contains preconfigured resource profiles you can adjust for your environment.
 

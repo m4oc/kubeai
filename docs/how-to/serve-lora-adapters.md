@@ -32,7 +32,7 @@ You can install this Model using kubectl:
 kubectl apply -f ./model.yaml
 ```
 
-Or if you are managed models with the KubeAI [models helm chart](https://github.com/substratusai/kubeai/tree/main/charts/models) you can add adapters to a given model via your helm values:
+Or if you are managed models with the KubeAI [models helm chart](https://github.com/kubeai-project/kubeai/tree/main/charts/models) you can add adapters to a given model via your helm values:
 
 ```yaml
 # helm-values.yaml

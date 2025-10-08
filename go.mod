@@ -1,4 +1,4 @@
-module github.com/substratusai/kubeai
+module github.com/kubeai-project/kubeai
 
 go 1.24.0
 

@@ -1,7 +1,7 @@
 # Using LangChain with KubeAI
 
 LangChain makes it easy to build applications powered by LLMs.
-[KubeAI](https://github.com/substratusai/kubeai) makes
+[KubeAI](https://github.com/kubeai-project/kubeai) makes
 it easy to deploy and manage LLMs at scale. Together, they make it easy to
 build and deploy private and secure AI applications.
 

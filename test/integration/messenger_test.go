@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/require"
-	"github.com/substratusai/kubeai/internal/config"
+	"github.com/kubeai-project/kubeai/internal/config"
 	"gocloud.dev/pubsub"
 )
 
