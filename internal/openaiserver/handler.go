@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/substratusai/kubeai/internal/modelproxy"
+	"github.com/kubeai-project/kubeai/internal/modelproxy"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

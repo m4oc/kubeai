@@ -6,7 +6,7 @@ import (
 	"sort"
 
 	"github.com/cespare/xxhash"
-	"github.com/substratusai/kubeai/internal/metrics"
+	"github.com/kubeai-project/kubeai/internal/metrics"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 )

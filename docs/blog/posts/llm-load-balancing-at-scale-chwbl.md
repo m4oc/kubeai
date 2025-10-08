@@ -61,7 +61,7 @@ The CHWBL algorithm extends traditional consistent hashing by incorporating load
 
 ## 5. Implementation
 
-We integrated the CHWBL routing strategy into the <a href="https://github.com/substratusai/kubeai" target="_blank">KubeAI project</a> under the PrefixHash configuration. This strategy functions as follows:
+We integrated the CHWBL routing strategy into the <a href="https://github.com/kubeai-project/kubeai" target="_blank">KubeAI project</a> under the PrefixHash configuration. This strategy functions as follows:
 
 1. **Request Inspection:** The incoming HTTP body is analyzed (OpenAI-formatted API request).
 2. **Prefix Extraction:** A prefix is extracted from the request (for example, using the first user message in chat completions) as well as the requested LoRA adapter (if applicable).

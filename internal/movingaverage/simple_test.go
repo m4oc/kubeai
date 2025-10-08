@@ -3,7 +3,7 @@ package movingaverage_test
 import (
 	"testing"
 
-	"github.com/substratusai/kubeai/internal/movingaverage"
+	"github.com/kubeai-project/kubeai/internal/movingaverage"
 )
 
 func TestSimple(t *testing.T) {

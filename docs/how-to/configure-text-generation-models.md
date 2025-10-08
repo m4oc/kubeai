@@ -4,22 +4,22 @@ KubeAI supports the following engines for text generation models (LLMs, VLMs, ..
 
 - vLLM (Recommended for GPU)
 - Ollama (Recommended for CPU)
-- Need something else? Please file an issue on [GitHub](https://github.com/substratusai/kubeai).
+- Need something else? Please file an issue on [GitHub](https://github.com/kubeai-project/kubeai).
 
 There are 2 ways to install a text generation model in KubeAI:
 - Use Helm with the `kubeai/models` chart.
 - Use `kubectl apply -f model.yaml` to install a Model Custom Resource.
 
 KubeAI comes with pre-validated and optimized Model configurations for popular text generation models. These models are available in the
-[kubeai/models Helm chart](https://github.com/substratusai/kubeai/tree/main/charts/models)
+[kubeai/models Helm chart](https://github.com/kubeai-project/kubeai/tree/main/charts/models)
 and are also published as raw manifests in the
-[manifests/model directory](https://github.com/substratusai/kubeai/tree/main/manifests/models).
+[manifests/model directory](https://github.com/kubeai-project/kubeai/tree/main/manifests/models).
 
 You can also easily define your own models using the Model Custom Resource directly or by using the `kubeai/models` Helm chart.
 
 ## Install a Text Generation Model using Helm
 
-You can take a look at all the pre-configured models in the chart's [default values file](https://github.com/substratusai/kubeai/blob/main/charts/models/values.yaml).
+You can take a look at all the pre-configured models in the chart's [default values file](https://github.com/kubeai-project/kubeai/blob/main/charts/models/values.yaml).
 
 You can get the default values for the models chart using the following command:
 ```bash

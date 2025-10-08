@@ -20,7 +20,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/substratusai/kubeai/internal/manager"
+	"github.com/kubeai-project/kubeai/internal/manager"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 )

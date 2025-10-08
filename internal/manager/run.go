@@ -33,16 +33,16 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 
-	kubeaiv1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/leader"
-	"github.com/substratusai/kubeai/internal/loadbalancer"
-	"github.com/substratusai/kubeai/internal/messenger"
-	"github.com/substratusai/kubeai/internal/modelautoscaler"
-	"github.com/substratusai/kubeai/internal/modelclient"
-	"github.com/substratusai/kubeai/internal/modelcontroller"
-	"github.com/substratusai/kubeai/internal/modelproxy"
-	"github.com/substratusai/kubeai/internal/openaiserver"
-	"github.com/substratusai/kubeai/internal/vllmclient"
+	kubeaiv1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/leader"
+	"github.com/kubeai-project/kubeai/internal/loadbalancer"
+	"github.com/kubeai-project/kubeai/internal/messenger"
+	"github.com/kubeai-project/kubeai/internal/modelautoscaler"
+	"github.com/kubeai-project/kubeai/internal/modelclient"
+	"github.com/kubeai-project/kubeai/internal/modelcontroller"
+	"github.com/kubeai-project/kubeai/internal/modelproxy"
+	"github.com/kubeai-project/kubeai/internal/openaiserver"
+	"github.com/kubeai-project/kubeai/internal/vllmclient"
 
 	// Pulling in these packages will register the gocloud implementations.
 	_ "gocloud.dev/pubsub/awssnssqs"
@@ -54,7 +54,7 @@ import (
 
 	// +kubebuilder:scaffold:imports
 
-	"github.com/substratusai/kubeai/internal/config"
+	"github.com/kubeai-project/kubeai/internal/config"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 )
 

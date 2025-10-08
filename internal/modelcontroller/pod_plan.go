@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	kubeaiv1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/k8sutils"
+	kubeaiv1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/k8sutils"
 	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

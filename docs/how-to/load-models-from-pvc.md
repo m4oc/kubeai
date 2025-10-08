@@ -36,8 +36,8 @@ Ollama requires using ReadWriteMany access mode because the rename operation `ol
 
 ### Example: Loading Qwen 0.5b from PVC
 
-1. Create a PVC with ReadWriteMany named `model-pvc`. See [example](https://github.com/substratusai/kubeai/blob/main/examples/ollama-pvc/pvc.yaml).
-2. Create a K8s Job to load the model onto `model-pvc. See [example](https://github.com/substratusai/kubeai/blob/main/examples/ollama-pvc/job.yaml)
+1. Create a PVC with ReadWriteMany named `model-pvc`. See [example](https://github.com/kubeai-project/kubeai/blob/main/examples/ollama-pvc/pvc.yaml).
+2. Create a K8s Job to load the model onto `model-pvc. See [example](https://github.com/kubeai-project/kubeai/blob/main/examples/ollama-pvc/job.yaml)
 
     The PVC should now have a `blobs/` and `manifests/` directory after the loader completes.
 

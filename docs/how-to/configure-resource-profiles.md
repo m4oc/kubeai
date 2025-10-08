@@ -4,7 +4,7 @@ This guide will cover modifying preconfigured [resource profiles](../concepts/re
 
 ## Modifying preconfigured resource profiles
 
-The KubeAI helm chart comes with preconfigured resource profiles for common resource types such as NVIDIA L4 GPUs. You can view these profiles in the [default helm values file](https://github.com/substratusai/kubeai/blob/main/charts/kubeai/values.yaml).
+The KubeAI helm chart comes with preconfigured resource profiles for common resource types such as NVIDIA L4 GPUs. You can view these profiles in the [default helm values file](https://github.com/kubeai-project/kubeai/blob/main/charts/kubeai/values.yaml).
 
 These profiles usually require some additional settings based on the cluster/cloud that KubeAI is installed into. You can modify a resource profile by setting custom helm values and runing `helm install` or `helm upgrade`. For example, if you are installing KubeAI on GKE you will need to set GKE-specific node selectors:
 

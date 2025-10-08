@@ -6,8 +6,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/apiutils"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/apiutils"
 )
 
 func newEndpointGroup(lb v1.LoadBalancing) *group {

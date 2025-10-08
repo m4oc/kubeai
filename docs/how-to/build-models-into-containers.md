@@ -13,7 +13,7 @@ export IMAGE=us-central1-docker.pkg.dev/substratus-dev/default/ollama-builtin-qw
 Build and push image. Note: building (downloading base image & model) and pushing (uploading image & model) can take a while depending on the size of the model.
 
 ```bash
-git clone https://github.com/substratusai/kubeai
+git clone https://github.com/kubeai-project/kubeai
 cd ./kubeai/examples/ollama-builtin
 
 docker build --build-arg MODEL_URL=$MODEL_URL -t $IMAGE .

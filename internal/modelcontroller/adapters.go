@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/k8sutils"
-	"github.com/substratusai/kubeai/internal/vllmclient"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/k8sutils"
+	"github.com/kubeai-project/kubeai/internal/vllmclient"
 	corev1 "k8s.io/api/core/v1"
 )
 

@@ -14,8 +14,8 @@ import (
 	"context"
 
 	"github.com/google/uuid"
-	k8sv1 "github.com/substratusai/kubeai/api/k8s/v1"
-	openaiv1 "github.com/substratusai/kubeai/api/openai/v1"
+	k8sv1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	openaiv1 "github.com/kubeai-project/kubeai/api/openai/v1"
 )
 
 var (

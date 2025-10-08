@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
-	"github.com/substratusai/kubeai/internal/apiutils"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
+	"github.com/kubeai-project/kubeai/internal/apiutils"
 )
 
 func BenchmarkEndpointGroup(b *testing.B) {

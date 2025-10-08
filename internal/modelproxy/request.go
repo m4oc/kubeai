@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/substratusai/kubeai/internal/apiutils"
+	"github.com/kubeai-project/kubeai/internal/apiutils"
 )
 
 // proxyRequest keeps track of the state of a request that is to be proxied.

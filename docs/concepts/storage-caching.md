@@ -35,6 +35,6 @@ KubeAI can manage model caches on a shared filesystem (i.e. AWS [EFS](https://aw
 
 ## C. Model on read-only-many disk
 
-**Status:** [Planned](https://github.com/substratusai/kubeai/blob/main/proposals/model-storage.md).
+**Status:** [Planned](https://github.com/kubeai-project/kubeai/blob/main/proposals/model-storage.md).
 
 Examples: [GCP Hyperdisk ML](https://cloud.google.com/compute/docs/disks/hyperdisks)

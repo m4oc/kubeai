@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/substratusai/kubeai/internal/apiutils"
+	"github.com/kubeai-project/kubeai/internal/apiutils"
 )
 
 func TestSplitModelAdapter(t *testing.T) {

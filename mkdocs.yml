@@ -1,6 +1,6 @@
 site_name: KubeAI
 site_url: https://www.kubeai.org
-repo_url: https://github.com/substratusai/kubeai
+repo_url: https://github.com/kubeai-project/kubeai
 
 theme:
   name: material

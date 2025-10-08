@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	v1 "github.com/substratusai/kubeai/api/k8s/v1"
+	v1 "github.com/kubeai-project/kubeai/api/k8s/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/utils/ptr"
 )
