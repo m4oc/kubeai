@@ -53,6 +53,9 @@ func (r *LoadBalancer) SetupWithManager(mgr ctrl.Manager) error {
 func (r *LoadBalancer) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	var pod corev1.Pod
 	if err := r.Get(ctx, req.NamespacedName, &pod); err != nil {
+		if apierrors.IsNotFound(err) {
+			r.removePodEndpoints(req.Namespace + "/" + req.Name)
+		}
 		return ctrl.Result{}, client.IgnoreNotFound(err)
 	}
 
@@ -72,7 +75,7 @@ func (r *LoadBalancer) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Re
 		}
 		var selfIPs []string
 		for _, p := range podList.Items {
-			if k8sutils.PodIsReady(&p) {
+			if p.DeletionTimestamp == nil && k8sutils.PodIsReady(&p) {
 				selfIPs = append(selfIPs, p.Status.PodIP)
 			}
 		}
@@ -97,7 +100,7 @@ func (r *LoadBalancer) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Re
 		if _, exclude := r.ExcludePods[pod.Name]; exclude {
 			continue
 		}
-		if !k8sutils.PodIsReady(&pod) {
+		if pod.DeletionTimestamp != nil || !k8sutils.PodIsReady(&pod) {
 			continue
 		}
 
@@ -199,4 +202,14 @@ func (r *LoadBalancer) GetAllAddresses(model string) []string {
 		return nil
 	}
 	return grp.getAllAddrs()
+}
+
+// removePodEndpoints handles delete events whose Pod is already absent from
+// the cache. Its model label is unavailable, so inspect the existing groups.
+func (r *LoadBalancer) removePodEndpoints(key string) {
+	r.endpointsMtx.Lock()
+	defer r.endpointsMtx.Unlock()
+	for _, g := range r.groups {
+		g.removeEndpoint(key)
+	}
 }
