@@ -148,3 +148,14 @@ func (g *group) addInFlight(endpointInFlight *atomic.Int64, add int64) int64 {
 	g.totalInFlight.Add(add)
 	return endpointInFlight.Add(add)
 }
+
+// removeEndpoint stops new selections without changing the counters held by
+// existing requests. Their completion callbacks still release those counters.
+func (g *group) removeEndpoint(key string) {
+	g.mtx.Lock()
+	defer g.mtx.Unlock()
+	if _, ok := g.endpoints[key]; ok {
+		g.chwblRemoveEndpoint(key)
+		delete(g.endpoints, key)
+	}
+}
