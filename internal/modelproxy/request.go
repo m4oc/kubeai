@@ -74,6 +74,10 @@ func (pr *proxyRequest) httpRequest() *http.Request {
 	clone := pr.http.Clone(pr.http.Context())
 	if pr.Body != nil {
 		clone.Body = io.NopCloser(bytes.NewReader(pr.Body))
+		// The buffered body has a known ContentLength. Keeping the incoming
+		// chunked encoding would hide it from servers that require that header,
+		// including inference endpoints that read Content-Length explicitly.
+		clone.TransferEncoding = nil
 	}
 	return clone
 }

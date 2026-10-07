@@ -150,6 +150,7 @@ spec:
                   - TextEmbedding
                   - Reranking
                   - SpeechToText
+                  - SystemOne
                   type: string
                 type: array
               files:
