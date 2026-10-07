@@ -69,6 +69,52 @@ func TestModelValidation(t *testing.T) {
 		},
 		{
 			model: v1.Model{
+				ObjectMeta: metadata("systemone-vllm-valid"),
+				Spec: v1.ModelSpec{
+					URL:      "hf://test-repo/test-model",
+					Engine:   v1.VLLMEngine,
+					Features: []v1.ModelFeature{v1.ModelFeatureSystemOne},
+				},
+			},
+			expValid: true,
+		},
+		{
+			model: v1.Model{
+				ObjectMeta: metadata("systemone-sglang-valid"),
+				Spec: v1.ModelSpec{
+					URL:      "hf://test-repo/test-model",
+					Engine:   v1.SGLangEngine,
+					Features: []v1.ModelFeature{v1.ModelFeatureSystemOne},
+				},
+			},
+			expValid: true,
+		},
+		{
+			model: v1.Model{
+				ObjectMeta: metadata("systemone-ollama-valid"),
+				Spec: v1.ModelSpec{
+					URL:      "ollama://test-model",
+					Engine:   v1.OLlamaEngine,
+					Features: []v1.ModelFeature{v1.ModelFeatureSystemOne, v1.ModelFeatureTextGeneration},
+				},
+			},
+			expValid: true,
+		},
+
+		{
+			model: v1.Model{
+				ObjectMeta: metadata("systemone-llamacpp-valid"),
+				Spec: v1.ModelSpec{
+					URL:      "hf://test-repo/test-model:Q4_K_M",
+					Engine:   v1.LlamaCppEngine,
+					Features: []v1.ModelFeature{v1.ModelFeatureSystemOne, v1.ModelFeatureTextGeneration},
+				},
+			},
+			expValid: true,
+		},
+
+		{
+			model: v1.Model{
 				ObjectMeta: metadata("minimum-valid"),
 				Spec: v1.ModelSpec{
 					URL:      "hf://test-repo/test-model",

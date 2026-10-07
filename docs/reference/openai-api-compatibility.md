@@ -48,6 +48,25 @@ POST /v1/audio/transcriptions
 
 * Supported for Models with `.spec.features: ["SpeechToText"]`.
 
+### System One decisions (extension)
+
+```text
+POST /v1/systemone
+```
+
+* KubeAI URL: `/openai/v1/systemone`.
+* Requires `.spec.features: ["SystemOne"]` and engine `OLlama`, `VLLM`,
+  `LlamaCpp` or `SGLang`.
+* The engine image must already serve `/v1/systemone` at its inference port.
+* Requires a non-empty `model` string naming a KubeAI Model. Adapter selection
+  is unsupported; other fields and responses are backend-defined.
+* JSON and multipart bodies are preserved byte-for-byte. Multipart requests
+  carry the JSON envelope in exactly one text form field named `request`.
+* The complete body limit is 32 MiB. The existing proxy handles load balancing,
+  scale-from-zero, retries and request accounting.
+* See [Route System One requests](../how-to/configure-systemone-models.md) for
+  configuration, discovery, examples, limitations and error behavior.
+
 ## OpenAI Client libaries
 You can use the official OpenAI client libraries by setting the
 `base_url` to the KubeAI endpoint.

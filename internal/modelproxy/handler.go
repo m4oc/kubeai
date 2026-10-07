@@ -55,13 +55,20 @@ var defaultRetryCodes = map[int]struct{}{
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == apiutils.SystemOnePath && r.Method != http.MethodPost {
+		w.Header().Set("Allow", http.MethodPost)
+		http.Error(w, "systemone requires POST", http.StatusMethodNotAllowed)
+		return
+	}
 	log.Printf("url: %v", r.URL)
 
 	w.Header().Set("X-Proxy", "lingo")
 
 	pr, err := h.parseProxyRequest(r)
 	if err != nil {
-		if errors.Is(err, apiutils.ErrBadRequest) {
+		if errors.Is(err, apiutils.ErrRequestTooLarge) {
+			pr.sendErrorResponse(w, http.StatusRequestEntityTooLarge, "%v", err)
+		} else if errors.Is(err, apiutils.ErrBadRequest) {
 			pr.sendErrorResponse(w, http.StatusBadRequest, "%v", err)
 		} else if errors.Is(err, apiutils.ErrModelNotFound) {
 			pr.sendErrorResponse(w, http.StatusNotFound, "%v", err)

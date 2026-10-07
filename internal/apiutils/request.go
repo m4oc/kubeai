@@ -8,6 +8,7 @@ import (
 	"mime"
 	"mime/multipart"
 	"net/http"
+	"slices"
 
 	"github.com/go-json-experiment/json"
 
@@ -85,17 +86,23 @@ func ParseRequest(ctx context.Context, client ModelClient, body io.Reader, path 
 		}
 	}
 
-	switch mediaType {
-	// Multipart form data is used for endpoints that accept file uploads:
-	case "multipart/form-data":
-		if err := r.readyMultiPartBody(body, mediaParams); err != nil {
-			return nil, fmt.Errorf("%w: reading multipart form data: %w", ErrBadRequest, err)
+	if path == SystemOnePath {
+		if err := r.readSystemOneBody(body, mediaType, mediaParams); err != nil {
+			return nil, err
 		}
+	} else {
+		switch mediaType {
+		// Multipart form data is used for endpoints that accept file uploads:
+		case "multipart/form-data":
+			if err := r.readyMultiPartBody(body, mediaParams); err != nil {
+				return nil, fmt.Errorf("%w: reading multipart form data: %w", ErrBadRequest, err)
+			}
 
-	// Assume "application/json":
-	default:
-		if err := r.readJSONBody(body, path); err != nil {
-			return nil, fmt.Errorf("%w: reading model from body: %w", ErrBadRequest, err)
+		// Assume "application/json":
+		default:
+			if err := r.readJSONBody(body, path); err != nil {
+				return nil, fmt.Errorf("%w: reading model from body: %w", ErrBadRequest, err)
+			}
 		}
 	}
 
@@ -224,6 +231,16 @@ func (r *Request) lookupModel(ctx context.Context, client ModelClient, path stri
 	}
 	if model == nil {
 		return fmt.Errorf("%w: %q", ErrModelNotFound, r.RequestedModel)
+	}
+	if path == SystemOnePath {
+		switch model.Spec.Engine {
+		case k8sv1.OLlamaEngine, k8sv1.VLLMEngine, k8sv1.LlamaCppEngine, k8sv1.SGLangEngine:
+		default:
+			return fmt.Errorf("%w: systemone supports only OLlama, VLLM, LlamaCpp and SGLang engines", ErrBadRequest)
+		}
+		if !slices.Contains(model.Spec.Features, k8sv1.ModelFeatureSystemOne) {
+			return fmt.Errorf("%w: model does not declare the SystemOne feature", ErrBadRequest)
+		}
 	}
 
 	r.LoadBalancing = model.Spec.LoadBalancing
