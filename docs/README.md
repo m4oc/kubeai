@@ -100,8 +100,7 @@ If you are using KubeAI and would like to be listed as an adopter, please make a
 
 ## Local Quickstart
 
-
-<video controls src="https://github.com/user-attachments/assets/711d1279-6af9-4c6c-a052-e59e7730b757" width="800"></video>
+https://github.com/user-attachments/assets/711d1279-6af9-4c6c-a052-e59e7730b757
 
 Create a local cluster using [kind](https://kind.sigs.k8s.io/) or [minikube](https://minikube.sigs.k8s.io/docs/).
 
@@ -192,17 +191,18 @@ Read about concepts, guides, and API documentation on [kubeai.org](https://www.k
 
 Let us know about features you are interested in seeing or reach out with questions.
 
+Maintainers (active)
+
+* [ffais](https://github.com/ffais/) 
+* [Marco Cristofanilli](https://github.com/m4oc/)
+* [Davide Rutigliano](https://github.com/DavideRutigliano/)
+
 You can also reach the maintainers of this project at:
 * [Slack channel](https://join.slack.com/t/kubeai-project/shared_invite/zt-3qctram3n-9t1JRU_8PNro7HvBZzoqvg)
-* [Discord channel (archived)](https://discord.gg/JeXhcmjZVm)
 
-Or just reach out on LinkedIn if you want to connect:
+Original creators and maintainers (inactive)
 
 * [Nick Stogner](https://www.linkedin.com/in/nstogner/)
 * [Sam Stoelinga](https://www.linkedin.com/in/samstoelinga/)
 
-Maintainers:
 
-* [ffais](https://github.com/ffais/) 
-* [m4oc](https://github.com/m4oc/)
-* [Davide Rutigliano](https://github.com/DavideRutigliano/)
